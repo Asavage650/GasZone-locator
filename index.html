@@ -1,5 +1,4 @@
 <!DOCTYPE html>
- alexius-branch
 <html>
   <head>
     <meta charset="utf-8" />
@@ -9,6 +8,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
     />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <section class="section">
@@ -35,13 +35,24 @@
 
       <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-          <a class="navbar-item"> Search </a>
+          <div class="field has-addons">
+            <div class="control">
+              <input
+                class="input"
+                type="text"
+                placeholder="Zipcode , City etc.."
+              />
+            </div>
+            <div class="control">
+              <a class="button is-info"> Search </a>
+            </div>
+          </div>
 
           <a class="navbar-item"> Near Me </a>
 
-          <a class ="navbar-item"> Rewards!</a>
+          <a class="navbar-item"> Rewards!</a>
 
-          <a class ="navbar-item"> Roadside Assistance</a>
+          <a class="navbar-item"> Roadside Assistance</a>
         </div>
 
         <div class="navbar-end">
@@ -56,16 +67,11 @@
         </div>
       </div>
     </nav>
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p><strong>GasZone</strong> by group of developers</p>
+        <p>Contact us at 1-800-gaszone!</p>
+      </div>
+    </footer>
   </body>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project_Draft</title>
-</head>
-<body>
-    
-</body>
-main
 </html>
