@@ -1,8 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title></title>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="x-ua-compatible" content="IE=Edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <script
+      src="https://www.bing.com/api/maps/mapcontrol?callback=initMap"
+      async
+      defer
+    ></script>
     <title>Hello Bulma!</title>
     <link
       rel="stylesheet"
@@ -67,6 +77,10 @@
         </div>
       </div>
     </nav>
+    <div
+      id="myMap"
+      style="position: relative; width: 600px; height: 400px"
+    ></div>
     <footer class="footer">
       <div class="content has-text-centered">
         <p><strong>GasZone</strong> by group of developers</p>
