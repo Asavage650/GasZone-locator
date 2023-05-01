@@ -1,0 +1,16 @@
+h1 {
+    text-align: center;
+    color: #86fb5c;
+
+}
+ .forms {
+    display: flex;
+    justify-content: center;
+    color: #86fb5c;
+ }
+  body {
+    background-color: black;
+  }
+
+
+ 
