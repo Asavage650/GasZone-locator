@@ -1,0 +1,13 @@
+h1 {
+    text-align: center;
+    color: #86fb5c;
+
+}
+ div {
+    display: flex;
+    justify-content: center;
+    color: #86fb5c;
+ }
+  body {
+    background-color: black;
+  }
