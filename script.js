@@ -132,6 +132,31 @@ var map;
                   zoom: 12
               });
           })
+          
+          (async () => {
+              let script = document.createElement("script");
+              let bingKey = await fetch("https://samples.azuremaps.com/api/GetBingMapsKey").then(r => r.text()).then(key => { return key });
+              script.setAttribute("src", `https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=${bingKey}&branch=experimental`);
+              document.body.appendChild(script);
+          })();
+          Microsoft.Maps.loadModule('Microsoft.Maps.AutoSuggest', function () {
+            var manager = new Microsoft.Maps.AutosuggestManager({
+                map: map,
+                businessSuggestions: true //Enable business suggestions
+            });
+            manager.attachAutosuggest('#searchBox', '#searchBoxContainer', suggestionSelected);
+        });
+    }
+
+    function suggestionSelected(result) {
+        //Remove previously selected suggestions from the map.
+        map.entities.clear();
+
+        //Show the suggestion as a pushpin and center map over it.
+        var pin = new Microsoft.Maps.Pushpin(result.location);
+        map.entities.push(pin);
+
+        map.setView({ bounds: result.bestView });
 // async function logJSONData() {
     // const response = await fetch("2d96U0TddweUPR3CHhagCK:7uf3yA7ZYDJdhcm94qxjHU"+'apiKey');
     // const jsonData = await response.json();
