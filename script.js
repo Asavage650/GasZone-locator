@@ -22,9 +22,8 @@ function GetMap() {
             authType: 'anonymous',
             clientId: 'e6b6ab59-eb5d-4d25-aa57-581135b927f0', 
             getToken: function (resolve, reject, map) {
-                var tokenServiceUrl = "https://samples.azuremaps.com/api/GetAzureMapsToken";
-
-                fetch(tokenServiceUrl).then(r => r.text()).then(token => resolve(token));
+                var tokenServiceUrl = "h8ki5qv9n5Vu8ymtmoGd~ZS1TvnsHUkzni3IBwU76SQ~AlRjk7BumcvRSC5JxrsnXpNQ_9PG5XnnZB2y4knfyxq4F10SDmNodDJiXLhhcCyk";
+            return tokenServiceUrl
             }
 
             
@@ -120,18 +119,18 @@ function toggleReverse(){
         reverse: !animation.getOptions().reverse
     });
 }
-var map;
+// var map;
 
-        function initMap() 
-          navigator.geolocation.getCurrentPosition(function (location) {
-              map = new Microsoft.Maps.Map('#myMap', {
-                  credentials: 'h8ki5qv9n5Vu8ymtmoGd~ZS1TvnsHUkzni3IBwU76SQ~AlRjk7BumcvRSC5JxrsnXpNQ_9PG5XnnZB2y4knfyxq4F10SDmNodDJiXLhhcCyk',
+//         function initMap() 
+//           navigator.geolocation.getCurrentPosition(function (location) {
+//               map = new Microsoft.Maps.Map('#myMap', {
+//                   credentials: 'h8ki5qv9n5Vu8ymtmoGd~ZS1TvnsHUkzni3IBwU76SQ~AlRjk7BumcvRSC5JxrsnXpNQ_9PG5XnnZB2y4knfyxq4F10SDmNodDJiXLhhcCyk',
 
 
-                  center: new Microsoft.Maps.Location(location.coords.latitude, location.coords.longitude),
-                  zoom: 12
-              });
-          })
+//                   center: new Microsoft.Maps.Location(location.coords.latitude, location.coords.longitude),
+//                   zoom: 12
+//               });
+//           })
 // async function logJSONData() {
     // const response = await fetch("2d96U0TddweUPR3CHhagCK:7uf3yA7ZYDJdhcm94qxjHU"+'apiKey');
     // const jsonData = await response.json();
