@@ -13,6 +13,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>GasZone</title>
 
+    <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=h8ki5qv9n5Vu8ymtmoGd~ZS1TvnsHUkzni3IBwU76SQ~AlRjk7BumcvRSC5JxrsnXpNQ_9PG5XnnZB2y4knfyxq4F10SDmNodDJiXLhhcCyk' async defer></script>
+
+    <script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/3.0.0-preview.6/atlas.min.js"></script>
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
@@ -31,38 +35,62 @@
   <body>
     <script type='text/javascript'>
       var map;
+      var lat;
+      var long;
+
 
       function initMap() {
         navigator.geolocation.getCurrentPosition(function (location){
+          lat=location.coords.latitude
+          long=location.coords.longitude
            map = new Microsoft.Maps.Map('#myMap', {
               credentials: 'h8ki5qv9n5Vu8ymtmoGd~ZS1TvnsHUkzni3IBwU76SQ~AlRjk7BumcvRSC5JxrsnXpNQ_9PG5XnnZB2y4knfyxq4F10SDmNodDJiXLhhcCyk',
 
 
-              center: new Microsoft.Maps.Location(location.coords.latitude, location.coords.longitude),
+              center: new Microsoft.Maps.Location(lat, long),
               zoom: 12     
           });
           Microsoft.Maps.loadModule('Microsoft.Maps.AutoSuggest', function () {
             var manager = new Microsoft.Maps.AutosuggestManager({
                 map: map,
-                businessSuggestions: true //Enable business suggestions
+                businessSuggestions: true
             });
             manager.attachAutosuggest('#searchBox', '#searchBoxContainer', suggestionSelected);
         });
-        })
+        
+        });
 
 
       }
+      </script>
 
+      <script>
     function suggestionSelected(result) {
-        //Remove previously selected suggestions from the map.
+
         map.entities.clear();
 
-        //Show the suggestion as a pushpin and center map over it.
+
         var pin = new Microsoft.Maps.Pushpin(result.location);
         map.entities.push(pin);
 
         map.setView({ bounds: result.bestView });
+
+                var directionsManager = new Microsoft.Maps.Directions.DirectionsManager(map);
+
+                var seattleWaypoint = new Microsoft.Maps.Directions.Waypoint({ address: "home", location: new Microsoft.Maps.Location(47.40, 122.1298) });
+                directionsManager.addWaypoint(seattleWaypoint);
+
+                var workWaypoint = new Microsoft.Maps.Directions.Waypoint({ address: 'Work', location: new Microsoft.Maps.Location(47.64, -122.1297) });
+                directionsManager.addWaypoint(workWaypoint);
+
+                directionsManager.setRenderOptions({ itineraryContainer: '#directionsItinerary' });
+
+                directionsManager.calculateDirections();
+            
+        
     }
+
+   
   </script>
 
 
@@ -107,11 +135,10 @@
               />
             </div>
             <div class="control">
-              <a class="button is-info"> Search </a>
             </div>
           </div>
 
-          <button class="navbar-item"> Near Me </button>
+         <a href="test.html"> <button class="navbar-item"> Directions </button></a>
 
           <button class="navbar-item"><a href="rewards.html"> Rewards!</a></button>
 
@@ -130,84 +157,14 @@
         </div>
       </div>
     </nav>
+
     <div id="myMap" style="position:relative;width:100%;min-width:290px;height:600px;background-color:gray"></div>
+    <div id='directionsItinerary'></div> 
 
     <fieldset style="width:800px;margin-top:10px;">
     </fieldset>
 
-      
-
-      <input
-        type="button"
-        value="Play"
-        onclick="animation.play()"
-        title="Play"
-      />
-      <input
-        type="button"
-        value="Pause"
-        onclick="animation.pause()"
-        title="Pause"
-      />
-      <input
-        type="button"
-        value="Stop"
-        onclick="animation.stop()"
-        title="Stop"
-      />
-      <input
-        type="button"
-        value="Reset"
-        onclick="animation.reset()"
-        title="Reset"
-      />
-      <br /><br />
-      Follow:
-      <input
-        id="followSymbol"
-        type="checkbox"
-        onclick="toggleFollow()"
-        title="Follow"
-      /><br />
-      Follow offset:
-      <input
-        id="followOffset"
-        type="checkbox"
-        onclick="toggleFollowOffset()"
-        title="Follow offset"
-      /><br />
-      Loop:
-      <input
-        id="loopAnimation"
-        type="checkbox"
-        onclick="toggleLooping()"
-        title="Loop"
-      /><br />
-      Reverse:
-      <input
-        id="reverseAnimation"
-        type="checkbox"
-        onclick="toggleReverse()"
-        title="Reverse"
-        >
-      </div>
-    </div>
-
-
-    <script>
-      // Dynamic load the Bing Maps Key and Script
-      // Get your own Bing Maps key at https://www.microsoft.com/maps
-      (async () => {
-          let script = document.createElement("script");
-          let bingKey = 'h8ki5qv9n5Vu8ymtmoGd~ZS1TvnsHUkzni3IBwU76SQ~AlRjk7BumcvRSC5JxrsnXpNQ_9PG5XnnZB2y4knfyxq4F10SDmNodDJiXLhhcCyk'
-          console.log(bingKey);
-          script.setAttribute("src", `https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=${bingKey}&branch=experimental`);
-          document.body.appendChild(script);
-      })();
-  </script>
-
-    <script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/3.0.0-preview.6/atlas.min.js"></script>
-    <script src="script.js"></script>
+    <!-- <script src="script.js"></script> -->
   </body>
 
 </html>

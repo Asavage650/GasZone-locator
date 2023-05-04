@@ -1,11 +1,56 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"; 
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap%27'); 
 
  h1 { 
      font-family: 'Rubik Wet Paint', serif; 
  } 
 
- 
+ footer {
+    text-align: center;
+    padding: 10px;
+    color: lightgreen;
+ }
+
+h1.title {
+    color:#028A0F;
+    font-size: 70px;
+    position:relative; left:500px;
+    -webkit-text-stroke: 1px;
+    -webkit-text-stroke-color: lightgreen;
 
 
 
+}
+
+body {
+
+    background-color: crimson;
+}
+
+.navbar {
+    background-color: #028A0F;
+}
+
+.navbar-item {
+    color: #028A0F;
+}
+
+ .control {
+    color: lightgreen;
+ }
+
+ a:link {
+    color: #028A0F;
+ }
+
+ a:visited {
+    color: #028A0F;
+ }
+
+ .button {
+    color:white;
+ }
+
+ a.control {
+    color: lightgreen;
+ }
