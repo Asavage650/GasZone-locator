@@ -5,11 +5,30 @@
      font-family: 'Rubik Wet Paint', serif; 
  } 
 
+Padster
  footer {
     text-align: center;
     padding: 10px;
     color: lightgreen;
  }
+
+.navbar-item {
+    padding: 5px;
+    height:55px;
+    position: relative;
+
+} 
+
+.mymap {
+    position: sticky;
+}
+
+.searchBoxContainer {
+    position: relative;
+}
+
+ 
+ main
 
 h1.title {
     color:#028A0F;

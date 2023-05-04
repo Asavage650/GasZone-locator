@@ -53,7 +53,11 @@
           Microsoft.Maps.loadModule('Microsoft.Maps.AutoSuggest', function () {
             var manager = new Microsoft.Maps.AutosuggestManager({
                 map: map,
+ Padster
                 businessSuggestions: true
+
+                businessSuggestions: true 
+ main
             });
             manager.attachAutosuggest('#searchBox', '#searchBoxContainer', suggestionSelected);
         });
@@ -66,10 +70,15 @@
 
       <script>
     function suggestionSelected(result) {
+ Padster
 
         map.entities.clear();
 
 
+
+        map.entities.clear();
+
+ main
         var pin = new Microsoft.Maps.Pushpin(result.location);
         map.entities.push(pin);
 
@@ -89,16 +98,20 @@
             
         
     }
+ Padster
 
    
   </script>
 
+  </script> 
+ main
 
-    <script
+
+    <script -->
       src="https://www.bing.com/api/maps/mapcontrol?callback=initMap"
       async
       defer
-    ></script>
+    </script>
     
 
     <section class="section">
@@ -141,7 +154,6 @@
          <a href="test.html"> <button class="navbar-item"> Directions </button></a>
 
           <button class="navbar-item"><a href="rewards.html"> Rewards!</a></button>
-
           <button class="navbar-item"><a href="https://roadside.aaa.com/"> Roadside Assistance</a></button>
         </div>
 
@@ -163,8 +175,21 @@
 
     <fieldset style="width:800px;margin-top:10px;">
     </fieldset>
+ Padster
 
     <!-- <script src="script.js"></script> -->
+
+    </div>
+    </div>
+    
+    
+
+    
+
+  <div id="myMap" style="position:relative;width:100%;min-width:290px;height:600px;"></div>
+    <script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/3.0.0-preview.6/atlas.min.js"></script>
+    <script src="script.js"></script>
+ main
   </body>
 
 </html>
