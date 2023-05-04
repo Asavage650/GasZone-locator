@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Calculate Driving Directions</title>
+
+    <meta charset="utf-8" />
+	<link rel="shortcut icon" href="/favicon.ico"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="The following example shows how to calculate driving directions from Seattle to a Work location." />
+    <meta name="keywords" content="Microsoft maps, map, gis, API, SDK, Bing, Bing Maps" />
+    <meta name="author" content="Microsoft Bing Maps" />
+    <meta name="screenshot" content="bmv8-basicdrivingdirectionsexample.jpg" />
+    
+    <script>
+        var map;
+        var directionsManager;
+
+        function GetMap()
+        {
+            map = new Microsoft.Maps.Map('#myMap', {});
+
+            Microsoft.Maps.loadModule('Microsoft.Maps.Directions', function () {
+                directionsManager = new Microsoft.Maps.Directions.DirectionsManager(map);
+
+                var home = new Microsoft.Maps.Directions.Waypoint({ address: 'Home', location: new Microsoft.Maps.Location(33.975422, -117.337479) });
+                directionsManager.addWaypoint(home);
+
+                var gas = new Microsoft.Maps.Directions.Waypoint({ address: 'Chevron', location: new Microsoft.Maps.Location(33.973834, -117.374078) });
+                directionsManager.addWaypoint(gas);
+
+                directionsManager.setRenderOptions({ itineraryContainer: '#directionsItinerary' });
+
+                directionsManager.calculateDirections();
+            });
+        }
+    </script>
+    
+    <style>        
+        .dirInstructions td, .dirInstructions th{
+            padding-top:0px !important;
+            padding-bottom:0px !important;
+        }
+
+        .dirSDK p{
+            margin-top:0px !important;
+            margin-bottom:0px !important;
+        }
+    </style>
+</head>
+<body>
+    <div id="myMap" style="position:relative;width:100%;min-width:290px;height:600px;background-color:gray"></div>
+    <div id='directionsItinerary'></div> 
+
+    <script>
+        (async () => {
+            let script = document.createElement("script");
+            let bingKey = 'h8ki5qv9n5Vu8ymtmoGd~ZS1TvnsHUkzni3IBwU76SQ~AlRjk7BumcvRSC5JxrsnXpNQ_9PG5XnnZB2y4knfyxq4F10SDmNodDJiXLhhcCyk';
+            script.setAttribute("src", `https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=${bingKey}`);
+            document.body.appendChild(script);
+        })();
+    </script>
+</body>
+</html>
