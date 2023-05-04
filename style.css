@@ -5,6 +5,21 @@
      font-family: 'Rubik Wet Paint', serif; 
  } 
 
+.navbar-item {
+    padding: 5px;
+    height:55px;
+    position: relative;
+
+} 
+
+.mymap {
+    position: sticky;
+}
+
+.searchBoxContainer {
+    position: relative;
+}
+
  
 
 

@@ -44,7 +44,7 @@
           Microsoft.Maps.loadModule('Microsoft.Maps.AutoSuggest', function () {
             var manager = new Microsoft.Maps.AutosuggestManager({
                 map: map,
-                businessSuggestions: true //Enable business suggestions
+                businessSuggestions: true 
             });
             manager.attachAutosuggest('#searchBox', '#searchBoxContainer', suggestionSelected);
         });
@@ -54,23 +54,21 @@
       }
 
     function suggestionSelected(result) {
-        //Remove previously selected suggestions from the map.
         map.entities.clear();
 
-        //Show the suggestion as a pushpin and center map over it.
         var pin = new Microsoft.Maps.Pushpin(result.location);
         map.entities.push(pin);
 
         map.setView({ bounds: result.bestView });
     }
-  </script>
+  </script> 
 
 
-    <script
+    <script -->
       src="https://www.bing.com/api/maps/mapcontrol?callback=initMap"
       async
       defer
-    ></script>
+    </script>
     
 
     <section class="section">
@@ -114,7 +112,6 @@
           <button class="navbar-item"> Near Me </button>
 
           <button class="navbar-item"><a href="rewards.html"> Rewards!</a></button>
-
           <button class="navbar-item"><a href="https://roadside.aaa.com/"> Roadside Assistance</a></button>
         </div>
 
@@ -134,91 +131,14 @@
 
     <fieldset style="width:800px;margin-top:10px;">
     </fieldset>
-
-      
-
-      <input
-        type="button"
-        value="Play"
-        onclick="animation.play()"
-        title="Play"
-      />
-      <input
-        type="button"
-        value="Pause"
-        onclick="animation.pause()"
-        title="Pause"
-      />
-      <input
-        type="button"
-        value="Stop"
-        onclick="animation.stop()"
-        title="Stop"
-      />
-      <input
-        type="button"
-        value="Reset"
-        onclick="animation.reset()"
-        title="Reset"
-      />
-      <br /><br />
-      Follow:
-      <input
-        id="followSymbol"
-        type="checkbox"
-        onclick="toggleFollow()"
-        title="Follow"
-      /><br />
-      Follow offset:
-      <input
-        id="followOffset"
-        type="checkbox"
-        onclick="toggleFollowOffset()"
-        title="Follow offset"
-      /><br />
-      Loop:
-      <input
-        id="loopAnimation"
-        type="checkbox"
-        onclick="toggleLooping()"
-        title="Loop"
-      /><br />
-      Reverse:
-      <input
-        id="reverseAnimation"
-        type="checkbox"
-        onclick="toggleReverse()"
-        title="Reverse"
-        >
-      </div>
+    </div>
     </div>
     
     
 
-    <a class="skiplink" href="#map">Go to map</a>
-    <div id="map" class="map" tabindex="0"></div>
-    <button id="zoom-out">Zoom out</button>
-    <button id="zoom-in">Zoom in</button>
+    
 
   <div id="myMap" style="position:relative;width:100%;min-width:290px;height:600px;"></div>
-
-
-    <fieldset
-      style="width: calc(100% - 30px); min-width: 290px; margin-top: 10px"
-    >
-      <legend>Animate along a route path</legend>
-      This sample shows how to smoothly animate a symbol along a route path
-      taking into consideration timestamps for each point in the route path.
-      This sample also includes controls and options for the animation. This
-      sample uses the open source
-      <a
-        href="https://github.com/Azure-Samples/azure-maps-animations"
-        target="_blank"
-        title="Azure Maps Animation module"
-        >Azure Maps Animation module</a
-      >
-    </fieldset>
-
     <script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/3.0.0-preview.6/atlas.min.js"></script>
     <script src="script.js"></script>
   </body>
