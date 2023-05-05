@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap%27'); 
 
 p {
+font-family: 'Press Start 2P', 'cursive';
 text-align: center;
-font-size: 80px;
+font-size: 40px;
 color: #86fb5c;
 }
 body{

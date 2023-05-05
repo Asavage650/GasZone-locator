@@ -1,9 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap%27'); 
+
 h1 {
+    font-family: 'Press Start 2P', 'cursive';
     text-align: center;
     color: #86fb5c;
 
 }
  div {
+    font-family: 'Press Start 2P', 'cursive';
+    font-size: 11px;
     display: flex;
     justify-content: center;
     color: #86fb5c;
