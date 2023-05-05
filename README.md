@@ -38,7 +38,7 @@
 ## This code was written by Robert Gomez, Anthony Padfield, Cecil John, and Alexius Savage with a lot of help from tutor Eric Hirsch. The HTML,CSS, and Javascript was written by all 4 developers with assistance from previously mentioned tutor. Some code was also derived from the API's used to create the map and user info.
 ## License
 ## Please refer ti license on github.com
-## Link
+## https://asavage650.github.io/GasZone-locator/
 ## ()
 
 
