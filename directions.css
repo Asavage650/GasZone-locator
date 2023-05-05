@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap%27'); 
+
+ h1 { 
+    font-family: 'Press Start 2P', 'cursive'; 
+ } 
+
+body {
+    background-color: rgb(101, 6, 6);
+}
+
+.lineOne {
+    color: rgb(0, 0, 0);
+}
+
+.lineTwo {
+    color: rgb(0, 0, 0);
+}
+
+.drTitleRight {
+    color: black;
+}
+
+.dirInstructions td, .dirInstructions th{
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+    color: black;
+}
+
+.dirSDK p{
+    margin-top:0px !important;
+    margin-bottom:0px !important;
+    color: black;
+}

@@ -2,8 +2,7 @@
 var map, pin, lineSource, pinSource;
 var animation;
 var apiKey = 'Ak995ryiMpPrE7ZdcMVJSr5LWE7TZQU60ENiPcM_Xgd--7K86ObS19g5Be6-_jVS';
-// var gasAPIkey = '2d96U0TddweUPR3CHhagCK:7uf3yA7ZYDJdhcm94qxjHU';
-// var setOptions= 'setOptions';
+var gasAPIkey = '2d96U0TddweUPR3CHhagCK:7uf3yA7ZYDJdhcm94qxjHU';
 
 var routePoints = [
     new atlas.data.Feature(new atlas.data.Point([-122.34758, 47.62155]), { _timestamp: new Date('Tue, 18 Aug 2020 00:53:53 GMT').getTime() }),
@@ -119,20 +118,141 @@ function toggleReverse(){
         reverse: !animation.getOptions().reverse
     });
 }
-// var map;
-
-//         function initMap() 
-//           navigator.geolocation.getCurrentPosition(function (location) {
-//               map = new Microsoft.Maps.Map('#myMap', {
-//                   credentials: 'h8ki5qv9n5Vu8ymtmoGd~ZS1TvnsHUkzni3IBwU76SQ~AlRjk7BumcvRSC5JxrsnXpNQ_9PG5XnnZB2y4knfyxq4F10SDmNodDJiXLhhcCyk',
 
 
-                //   center: new Microsoft.Maps.Location(location.coords.latitude, location.coords.longitude),
-                //   zoom: 12
-            //   });
-        //   })
-// async function logJSONData() {
-    // const response = await fetch("2d96U0TddweUPR3CHhagCK:7uf3yA7ZYDJdhcm94qxjHU"+'apiKey');
-    // const jsonData = await response.json();
-    // console.log(jsonData);
-//   }
+function getGas(state) {
+    const fakeResponse = {
+        success: true,
+        result: {
+            state: {
+                currency: 'usd',
+                name: "California",
+                lowerName: "washington",
+                gasoline: 4.594,
+                midGrade: 4.814,
+                premium: 5.000,
+                diesel: 4.989
+            },
+            cities: [
+                {
+                    currency: 'usd',
+                    gasoline: 4.582,
+                    midGrade: 4.774,
+                    premium: 4.963,
+                    diesel: 4.837,
+                    name: 'Bellingham',
+                    lowerName: 'bellingham'
+                },
+                {
+                    currency: 'usd',
+                    gasoline: 4.571,
+                    midGrade: 4.775,
+                    premium: 4.961,
+                    diesel: 4.930,
+                    name: 'Bremerton',
+                    lowerName: 'bremerton'
+                },
+                {
+                    currency: 'usd',
+                    gasoline: 3.892,
+                    midGrade: 0.000,
+                    premium: 4.099,
+                    diesel: 4.329,
+                    name: 'Clarkson',
+                    lowerName: 'clarkson'
+                },
+                {
+                    currency: 'usd',
+                    gasoline: 4.673,
+                    midGrade: 4.787,
+                    premium: 4.946,
+                    diesel: 5.091,
+                    name: 'Longview',
+                    lowerName: 'longview'
+                },
+                {
+                    currency: 'usd',
+                    gasoline: 4.469,
+                    midGrade: 4.649,
+                    premium: 4.897,
+                    diesel: 4.640,
+                    name: 'Mount Vernon-Anacortes',
+                    lowerName: 'mount vernon-anacortes'
+                },
+                {
+                    currency: 'usd',
+                    gasoline: 4.614,
+                    midGrade: 4.785,
+                    premium: 4.973,
+                    diesel: 5.083,
+                    name: 'Olympia',
+                    lowerName: 'olympia'
+                },
+                {
+                    currency: 'usd',
+                    gasoline: 4.391,
+                    midGrade: 4.626,
+                    premium: 4.854,
+                    diesel: 4.875,
+                    name: 'Richland-Kennewick-Pasco',
+                    lowerName: 'richland-kennewick-pasco'
+                },
+                {
+                    currency: 'usd',
+                    gasoline: 4.736,
+                    midGrade: 4.944,
+                    premium: 5.119,
+                    diesel: 5.201,
+                    name: 'Seattle-Bellevue-Everett',
+                    lowerName: 'seattle-bellevue-everett'
+                },
+                {
+                    currency: 'usd',
+                    gasoline: 4.323,
+                    midGrade: 4.555,
+                    premium: 4.760,
+                    diesel: 4.728,
+                    name: 'Spokane',
+                    lowerName: 'spokane'
+                },
+                {
+                    currency: 'usd',
+                    gasoline: 4.618,
+                    midGrade: 4.847,
+                    premium: 5.003,
+                    diesel: 5.028,
+                    name: 'Tacoma',
+                    lowerName: 'tacoma'
+                },
+            ]
+        }
+    }
+    // fetch("https://api.collectapi.com/gasPrice/stateUsaPrice?state=" + state, {
+    //     method: "GET",
+
+    //     headers: {
+    //         'Authorization': '2d96U0TddweUPR3CHhagCK:7uf3yA7ZYDJdhcm94qxjHU',
+    //         'Content-Type': 'application/json'
+
+
+
+
+    //     }
+    // }).then((res) => {
+    //     return res.json()
+    // }).then((data) => {
+        // console.log(data)
+        var sidebar = document.getElementById("sidebar")
+        sidebar.innerHTML +=`
+        <div>
+            <h4>${fakeResponse.result.state.name}</h4>
+            <p>Average Gas Price: Regular $${fakeResponse.result.state.gasoline}</p>
+            <p>Average Gas Price: Premium $${fakeResponse.result.state.premium}</p>
+            <p>Average Gas Price: Diesel $${fakeResponse.result.state.diesel}</p>
+        </div>
+        `
+    // })
+}
+getGas("CA");
+
+console.log(getGas)

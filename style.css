@@ -1,8 +1,8 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"; 
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap%27'); 
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap%27'); 
 
  h1 { 
-     font-family: 'Rubik Wet Paint', serif; 
+    font-family: 'Press Start 2P', 'cursive'; 
  } 
 
  footer {
@@ -52,7 +52,6 @@ body {
 
 .navbar-menu{
     flex-wrap: wrap;
-    justify-content: space-between;
 }
 .navbar-item:nth-child(1) {
     color: #028A0F;
