@@ -1,4 +1,3 @@
- alexius-branch
 # GasZone Gas Station Locator
 
 ## User Story
@@ -29,14 +28,12 @@
 ## Use on a typical browser such as google chrome or safari. Mobile friendly as well.
 ## Usage 
 ## The site can be used to get directions and prices of gas stations nearby the users location, and in turn will save them money or at least help them make a decision based on what prices or stations they prefer.
-##
-##
-##
-##
-##
-##
-##
-##
+## ![Image of main page](/Screenshot%202023-05-04%20210045.png)
+## ![Image of directions page](/2023-05-04_5.png)
+## ![Image of Roadside Assistance](/2023-05-04_7.png)
+## ![Image of Signup Page](/2023-05-04_8.png)
+## ![Image of Login Page](/2023-05-04_9.png)
+## ![Image of Rewards Page](/Screenshot%202023-05-04%20211808.png)
 ## Credits
 ## This code was written by Robert Gomez, Anthony Padfield, Cecil John, and Alexius Savage with a lot of help from tutor Eric Hirsch. The HTML,CSS, and Javascript was written by all 4 developers with assistance from previously mentioned tutor. Some code was also derived from the API's used to create the map and user info.
 ## License
