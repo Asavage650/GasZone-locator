@@ -74,20 +74,6 @@
         map.entities.push(pin);
 
         map.setView({ bounds: result.bestView });
-
-                var directionsManager = new Microsoft.Maps.Directions.DirectionsManager(map);
-
-                var seattleWaypoint = new Microsoft.Maps.Directions.Waypoint({ address: "home", location: new Microsoft.Maps.Location(47.40, 122.1298) });
-                directionsManager.addWaypoint(seattleWaypoint);
-
-                var workWaypoint = new Microsoft.Maps.Directions.Waypoint({ address: 'Work', location: new Microsoft.Maps.Location(47.64, -122.1297) });
-                directionsManager.addWaypoint(workWaypoint);
-
-                directionsManager.setRenderOptions({ itineraryContainer: '#directionsItinerary' });
-
-                directionsManager.calculateDirections();
-            
-        
     }
 
    
@@ -137,7 +123,7 @@
             <div class="control">
             </div>
           </div>
-
+          <a id="nav-item"></a>
          <a href="test.html"> <button class="navbar-item"> Directions </button></a>
 
           <button class="navbar-item"><a href="rewards.html"> Rewards!</a></button>

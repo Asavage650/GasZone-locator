@@ -24,16 +24,29 @@ h1.title {
 
 body {
 
-    background-color: crimson;
+    background-color: rgb(0, 0, 0);
 }
 
 .navbar {
     background-color: #028A0F;
 }
 
-.navbar-item {
+.input {
+    line-height: 4.6;
+}
+
+.navbar-menu{
+    flex-wrap: wrap;
+}
+.navbar-item:nth-child(1) {
     color: #028A0F;
 }
+
+    element.style{
+align-items: start;
+    }
+
+
 
  .control {
     color: lightgreen;
