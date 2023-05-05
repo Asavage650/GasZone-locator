@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const fullName = document.querySelector('#name');
 const email = document.querySelector('#email');
 const username = document.querySelector('#username');
@@ -37,29 +36,4 @@ document.getElementById('Submit').addEventListener("click", function() {
    JSON.stringify({password:password.value}),
    )
 });
-=======
-let name = document.querySelector('#name');
-let email = document.querySelector('#email');
-let username = document.querySelector('#username');
-let password = document.querySelector('#password');
-let submitButton = document.querySelector('#Submit');
 
-submitButton.addEventListener("click", function(event) {
-    event.preventDefault();
-    
-    // create user object from submission
-    var user = {
-      firstName: firstNameInput.value.trim(),
-      lastName: lastNameInput.value.trim(),
-      email: emailInput.value.trim(),
-      password: passwordInput.value.trim()
-    };
-  
-    // set new submission to local storage 
-    localStorage.setItem("user", JSON.stringify(user));
-    
-  });
-
-
-
->>>>>>> b37739c47904bbe0113d8fbfafaaa0376209598f
